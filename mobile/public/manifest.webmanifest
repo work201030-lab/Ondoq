@@ -1,0 +1,13 @@
+{
+  "name": "ONDOQ",
+  "short_name": "ONDOQ",
+  "lang": "ar",
+  "dir": "rtl",
+  "start_url": "/",
+  "display": "standalone",
+  "theme_color": "#0f766e",
+  "background_color": "#ffffff",
+  "icons": [
+    {"src":"/ondoq-icon.png","sizes":"1024x1024","type":"image/png","purpose":"any maskable"}
+  ]
+}

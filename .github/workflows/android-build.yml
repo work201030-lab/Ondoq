@@ -8,6 +8,9 @@ on:
       - 'mobile/**'
       - '.github/workflows/android-build.yml'
 
+permissions:
+  contents: read
+
 jobs:
   build-debug-apk:
     runs-on: ubuntu-latest
@@ -15,6 +18,9 @@ jobs:
     defaults:
       run:
         working-directory: mobile
+
+    env:
+      VITE_API_URL: https://ondoq-clinic-backend.onrender.com
 
     steps:
       - name: Checkout
@@ -24,8 +30,6 @@ jobs:
         uses: actions/setup-node@v4
         with:
           node-version: 20
-          cache: npm
-          cache-dependency-path: mobile/package.json
 
       - name: Setup Java
         uses: actions/setup-java@v4

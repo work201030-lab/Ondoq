@@ -5,10 +5,10 @@ export const LANGS = [
   ['en', 'English'],
   ['fr', 'Français'],
   ['es', 'Español'],
-  ['de', 'Deutsch'],
+  ['de', 'Deutsch']
 ];
 
-const SUPPORTED = LANGS.map(([code]) => code);
+const SUPPORTED = ['ar', 'en', 'fr', 'es', 'de'];
 
 const D = {
   ar: {
@@ -27,7 +27,7 @@ const D = {
     appointments: 'المواعيد',
     logout: 'خروج',
     language: 'اللغة',
-    loading: 'جارٍ التحميل...',
+    loading: 'جارٍ التحميل...'
   },
   en: {
     app: 'ONDOQ',
@@ -45,7 +45,7 @@ const D = {
     appointments: 'Appointments',
     logout: 'Log out',
     language: 'Language',
-    loading: 'Loading...',
+    loading: 'Loading...'
   },
   fr: {
     app: 'ONDOQ',
@@ -63,7 +63,7 @@ const D = {
     appointments: 'Rendez-vous',
     logout: 'Déconnexion',
     language: 'Langue',
-    loading: 'Chargement...',
+    loading: 'Chargement...'
   },
   es: {
     app: 'ONDOQ',
@@ -81,7 +81,7 @@ const D = {
     appointments: 'Citas',
     logout: 'Salir',
     language: 'Idioma',
-    loading: 'Cargando...',
+    loading: 'Cargando...'
   },
   de: {
     app: 'ONDOQ',
@@ -99,8 +99,8 @@ const D = {
     appointments: 'Termine',
     logout: 'Abmelden',
     language: 'Sprache',
-    loading: 'Laden...',
-  },
+    loading: 'Laden...'
+  }
 };
 
 function detectDeviceLanguage() {

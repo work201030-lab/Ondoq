@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react';
+import { useState, useEffect, createElement } from 'react';
 
 const translations = {
   ar: {
@@ -77,18 +77,20 @@ export function useI18n() {
 }
 
 export function LanguageSelect({ lang, setLang }) {
-  return (
-    <select
-      className="language-select"
-      value={lang}
-      onChange={(e) => setLang(e.target.value)}
-      aria-label="Language"
-    >
-      {LANGS.map(([code, label]) => (
-        <option key={code} value={code}>
-          {label}
-        </option>
-      ))}
-    </select>
+  return createElement(
+    'select',
+    {
+      className: 'language-select',
+      value: lang,
+      onChange: (e) => setLang(e.target.value),
+      'aria-label': 'Language'
+    },
+    LANGS.map(([code, label]) =>
+      createElement(
+        'option',
+        { key: code, value: code },
+        label
+      )
+    )
   );
 }

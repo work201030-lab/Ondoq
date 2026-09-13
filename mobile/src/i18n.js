@@ -17,34 +17,24 @@ function detectDeviceLanguage() {
   ]
     .filter(Boolean)
     .map((value) => String(value).toLowerCase());
-
   for (const value of candidates) {
     const base = value.split('-')[0];
-
     if (SUPPORTED.includes(base)) {
       return base;
     }
   }
-
   return 'en';
 }
 
 function getInitialLanguage() {
   const saved = localStorage.getItem('lang');
   const savedMode = localStorage.getItem('ondoq-language-mode');
-
-  if (
-    savedMode === 'manual' &&
-    SUPPORTED.includes(saved)
-  ) {
+  if (savedMode === 'manual' && SUPPORTED.includes(saved)) {
     return saved;
   }
-
   const detected = detectDeviceLanguage();
-
   localStorage.setItem('lang', detected);
   localStorage.setItem('ondoq-language-mode', 'auto');
-
   return detected;
 }
 
@@ -75,8 +65,7 @@ const D = {
     removeLocation: 'إزالة الموقع',
     address: 'العنوان',
     privacy: 'الخصوصية',
-    privacyText:
-      'نستخدم بيانات العيادة والمرضى لتشغيل نظام إدارة المواعيد والمرضى.',
+    privacyText: 'نستخدم بيانات العيادة والمرضى لتشغيل نظام إدارة المواعيد والمرضى.',
     discover: 'اكتشاف العيادات',
     findNearest: 'اعثر على أقرب عيادة',
     distance: 'المسافة',
@@ -119,8 +108,7 @@ const D = {
     noPatients: 'لا يوجد مرضى حتى الآن',
     noAppointments: 'لا توجد مواعيد',
     management: 'إدارة عيادتك بسهولة',
-    nearbyText:
-      'ابحث حسب المسافة والتخصص والتقييم، ثم احجز مباشرة.',
+    nearbyText: 'ابحث حسب المسافة والتخصص والتقييم، ثم احجز مباشرة.',
     km: 'كم',
     open: 'مفتوحة الآن',
     noClinics: 'لا توجد عيادات مطابقة.',
@@ -128,8 +116,7 @@ const D = {
     myAppointments: 'مواعيدي',
     allBookings: 'كل حجوزاتك في مكان واحد',
     deletePatientAccount: 'حذف حساب المريض',
-    deletePatientConfirm:
-      'هل أنت متأكد من حذف حساب المريض؟ سيتم حذف بيانات تسجيل الدخول للحساب. قد تحتفظ العيادات بسجلات المواعيد التي يلزم الاحتفاظ بها قانونيًا.',
+    deletePatientConfirm: 'هل أنت متأكد من حذف حساب المريض؟ سيتم حذف بيانات تسجيل الدخول للحساب. قد تحتفظ العيادات بسجلات المواعيد التي يلزم الاحتفاظ بها قانونيًا.',
     accountDeleted: 'تم حذف حساب المريض.',
     subscription: 'الاشتراك',
     cancelScheduled: 'تم جدولة الإلغاء عند نهاية الفترة.',
@@ -137,10 +124,8 @@ const D = {
     revenue: 'الإيرادات المدفوعة (جنيه)',
     performance: 'الأداء',
     aiAssistant: 'مساعد إدارة العيادة بالذكاء الاصطناعي',
-    aiAssistantHint:
-      'للمساعدة التشغيلية فقط — ليس نصيحة طبية.',
-    aiPlaceholder:
-      'اسأل عن المواعيد أو التذكيرات أو توزيع العمل أو أداء العيادة…',
+    aiAssistantHint: 'للمساعدة التشغيلية فقط — ليس نصيحة طبية.',
+    aiPlaceholder: 'اسأل عن المواعيد أو التذكيرات أو توزيع العمل أو أداء العيادة…',
     askAI: 'اسأل الذكاء الاصطناعي',
     completed: 'مكتمل',
     cancelled: 'ملغى',
@@ -149,7 +134,6 @@ const D = {
     remind: 'إرسال تذكير',
     reminderSent: 'تم إرسال التذكير.',
   },
-
   en: {
     app: 'ONDOQ',
     tag: 'Clinic management in one place',
@@ -176,8 +160,7 @@ const D = {
     removeLocation: 'Remove location',
     address: 'Address',
     privacy: 'Privacy',
-    privacyText:
-      'We use clinic and patient data to operate appointments and clinic management.',
+    privacyText: 'We use clinic and patient data to operate appointments and clinic management.',
     discover: 'Discover clinics',
     findNearest: 'Find the nearest clinic',
     distance: 'Distance',
@@ -208,8 +191,7 @@ const D = {
     comment: 'Comment',
     submitReview: 'Submit review',
     reviewDone: 'Thank you! Your review was submitted.',
-    reviewOnlyAfter:
-      'You can review after the appointment is completed.',
+    reviewOnlyAfter: 'You can review after the appointment is completed.',
     completeAppointment: 'Mark appointment completed',
     uploadClinic: 'Add clinic photo',
     uploadDoctor: 'Add doctor photo',
@@ -221,8 +203,7 @@ const D = {
     noPatients: 'No patients yet',
     noAppointments: 'No appointments',
     management: 'Manage your clinic with ease',
-    nearbyText:
-      'Search by distance, specialty and rating, then book directly.',
+    nearbyText: 'Search by distance, specialty and rating, then book directly.',
     km: 'km',
     open: 'Open now',
     noClinics: 'No matching clinics.',
@@ -230,8 +211,7 @@ const D = {
     myAppointments: 'My appointments',
     allBookings: 'All your bookings in one place',
     deletePatientAccount: 'Delete patient account',
-    deletePatientConfirm:
-      'Are you sure you want to delete your patient account? Your account login data will be deleted. Clinics may retain appointment records when legally required.',
+    deletePatientConfirm: 'Are you sure you want to delete your patient account? Your account login data will be deleted. Clinics may retain appointment records when legally required.',
     accountDeleted: 'Patient account deleted.',
     subscription: 'Subscription',
     cancelScheduled: 'Cancellation scheduled at period end.',
@@ -239,10 +219,8 @@ const D = {
     revenue: 'Paid revenue (EGP)',
     performance: 'Performance',
     aiAssistant: 'AI clinic operations assistant',
-    aiAssistantHint:
-      'Operational help only — not medical advice.',
-    aiPlaceholder:
-      'Ask about scheduling, reminders, staffing, or clinic performance…',
+    aiAssistantHint: 'Operational help only — not medical advice.',
+    aiPlaceholder: 'Ask about scheduling, reminders, staffing, or clinic performance…',
     askAI: 'Ask AI',
     completed: 'completed',
     cancelled: 'cancelled',
@@ -251,7 +229,6 @@ const D = {
     remind: 'Send reminder',
     reminderSent: 'Reminder sent.',
   },
-
   fr: {
     app: 'ONDOQ',
     tag: 'La gestion du cabinet en un seul endroit',
@@ -278,8 +255,7 @@ const D = {
     removeLocation: 'Supprimer',
     address: 'Adresse',
     privacy: 'Confidentialité',
-    privacyText:
-      'Nous utilisons les données du cabinet et des patients pour gérer les rendez-vous.',
+    privacyText: 'Nous utilisons les données du cabinet et des patients pour gérer les rendez-vous.',
     discover: 'Découvrir les cabinets',
     findNearest: 'Trouver le cabinet le plus proche',
     distance: 'Distance',
@@ -310,8 +286,7 @@ const D = {
     comment: 'Commentaire',
     submitReview: 'Envoyer',
     reviewDone: 'Merci ! Votre avis a été envoyé.',
-    reviewOnlyAfter:
-      'Vous pourrez évaluer après le rendez-vous.',
+    reviewOnlyAfter: 'Vous pourrez évaluer après le rendez-vous.',
     completeAppointment: 'Marquer comme terminé',
     uploadClinic: 'Ajouter une photo du cabinet',
     uploadDoctor: 'Ajouter une photo du médecin',
@@ -323,8 +298,7 @@ const D = {
     noPatients: 'Aucun patient',
     noAppointments: 'Aucun rendez-vous',
     management: 'Gérez votre cabinet facilement',
-    nearbyText:
-      'Recherchez par distance, spécialité et note, puis réservez.',
+    nearbyText: 'Recherchez par distance, spécialité et note, puis réservez.',
     km: 'km',
     open: 'Ouvert',
     noClinics: 'Aucun cabinet correspondant.',
@@ -332,20 +306,16 @@ const D = {
     myAppointments: 'Mes rendez-vous',
     allBookings: 'Tous vos rendez-vous au même endroit',
     deletePatientAccount: 'Supprimer le compte patient',
-    deletePatientConfirm:
-      'Supprimer votre compte patient ? Les données de connexion seront supprimées. Les cabinets peuvent conserver les dossiers de rendez-vous lorsque la loi l’exige.',
+    deletePatientConfirm: 'Supprimer votre compte patient ? Les données de connexion seront supprimées. Les cabinets peuvent conserver les dossiers de rendez-vous lorsque la loi l’exige.',
     accountDeleted: 'Compte patient supprimé.',
     subscription: 'Abonnement',
-    cancelScheduled:
-      'Annulation prévue à la fin de la période.',
+    cancelScheduled: 'Annulation prévue à la fin de la période.',
     monthAppointments: 'Ce mois-ci',
     revenue: 'Revenus payés (EGP)',
     performance: 'Performance',
     aiAssistant: 'Assistant IA pour la gestion du cabinet',
-    aiAssistantHint:
-      'Aide opérationnelle uniquement — pas un avis médical.',
-    aiPlaceholder:
-      'Posez une question sur les rendez-vous, rappels, personnel ou performance…',
+    aiAssistantHint: 'Aide opérationnelle uniquement — pas un avis médical.',
+    aiPlaceholder: 'Posez une question sur les rendez-vous, rappels, personnel ou performance…',
     askAI: 'Demander à l’IA',
     completed: 'terminé',
     cancelled: 'annulé',
@@ -354,7 +324,6 @@ const D = {
     remind: 'Envoyer un rappel',
     reminderSent: 'Rappel envoyé.',
   },
-
   es: {
     app: 'ONDOQ',
     tag: 'Gestión de clínicas en un solo lugar',
@@ -381,8 +350,7 @@ const D = {
     removeLocation: 'Eliminar',
     address: 'Dirección',
     privacy: 'Privacidad',
-    privacyText:
-      'Usamos los datos de la clínica y pacientes para gestionar las citas.',
+    privacyText: 'Usamos los datos de la clínica y pacientes para gestionar las citas.',
     discover: 'Descubrir clínicas',
     findNearest: 'Encuentra la clínica más cercana',
     distance: 'Distancia',
@@ -413,8 +381,7 @@ const D = {
     comment: 'Comentario',
     submitReview: 'Enviar valoración',
     reviewDone: '¡Gracias! Tu valoración fue enviada.',
-    reviewOnlyAfter:
-      'Puedes valorar después de completar la cita.',
+    reviewOnlyAfter: 'Puedes valorar después de completar la cita.',
     completeAppointment: 'Marcar cita como completada',
     uploadClinic: 'Añadir foto de la clínica',
     uploadDoctor: 'Añadir foto del médico',
@@ -426,8 +393,7 @@ const D = {
     noPatients: 'Aún no hay pacientes',
     noAppointments: 'No hay citas',
     management: 'Gestiona tu clínica fácilmente',
-    nearbyText:
-      'Busca por distancia, especialidad y valoración, y reserva directamente.',
+    nearbyText: 'Busca por distancia, especialidad y valoración, y reserva directamente.',
     km: 'km',
     open: 'Abierta',
     noClinics: 'No hay clínicas coincidentes.',
@@ -435,20 +401,16 @@ const D = {
     myAppointments: 'Mis citas',
     allBookings: 'Todas tus citas en un solo lugar',
     deletePatientAccount: 'Eliminar cuenta del paciente',
-    deletePatientConfirm:
-      '¿Seguro que quieres eliminar tu cuenta de paciente? Se eliminarán los datos de acceso. Las clínicas pueden conservar los registros de citas cuando la ley lo exija.',
+    deletePatientConfirm: '¿Seguro que quieres eliminar tu cuenta de paciente? Se eliminarán los datos de acceso. Las clínicas pueden conservar los registros de citas cuando la ley lo exija.',
     accountDeleted: 'Cuenta del paciente eliminada.',
     subscription: 'Suscripción',
-    cancelScheduled:
-      'Cancelación programada al final del período.',
+    cancelScheduled: 'Cancelación programada al final del período.',
     monthAppointments: 'Este mes',
     revenue: 'Ingresos pagados (EGP)',
     performance: 'Rendimiento',
     aiAssistant: 'Asistente de IA para operaciones de la clínica',
-    aiAssistantHint:
-      'Solo ayuda operativa — no es consejo médico.',
-    aiPlaceholder:
-      'Pregunta sobre citas, recordatorios, personal o rendimiento…',
+    aiAssistantHint: 'Solo ayuda operativa — no es consejo médico.',
+    aiPlaceholder: 'Pregunta sobre citas, recordatorios, personal o rendimiento…',
     askAI: 'Preguntar a la IA',
     completed: 'completada',
     cancelled: 'cancelada',
@@ -457,7 +419,6 @@ const D = {
     remind: 'Enviar recordatorio',
     reminderSent: 'Recordatorio enviado.',
   },
-
   de: {
     app: 'ONDOQ',
     tag: 'Klinikverwaltung an einem Ort',
@@ -484,8 +445,7 @@ const D = {
     removeLocation: 'Standort entfernen',
     address: 'Adresse',
     privacy: 'Datenschutz',
-    privacyText:
-      'Wir verwenden Klinik- und Patientendaten zur Terminverwaltung.',
+    privacyText: 'Wir verwenden Klinik- und Patientendaten zur Terminverwaltung.',
     discover: 'Kliniken entdecken',
     findNearest: 'Nächste Klinik finden',
     distance: 'Entfernung',
@@ -516,10 +476,8 @@ const D = {
     comment: 'Kommentar',
     submitReview: 'Bewertung senden',
     reviewDone: 'Danke! Deine Bewertung wurde gesendet.',
-    reviewOnlyAfter:
-      'Bewertung nach abgeschlossenem Termin möglich.',
-    completeAppointment:
-      'Termin als abgeschlossen markieren',
+    reviewOnlyAfter: 'Bewertung nach abgeschlossenem Termin möglich.',
+    completeAppointment: 'Termin als abgeschlossen markieren',
     uploadClinic: 'Klinikfoto hinzufügen',
     uploadDoctor: 'Arztfoto hinzufügen',
     imageHint: 'JPG/PNG/WebP bis 5 MB',
@@ -530,8 +488,7 @@ const D = {
     noPatients: 'Noch keine Patienten',
     noAppointments: 'Keine Termine',
     management: 'Verwalten Sie Ihre Klinik einfach',
-    nearbyText:
-      'Nach Entfernung, Fachgebiet und Bewertung suchen und direkt buchen.',
+    nearbyText: 'Nach Entfernung, Fachgebiet und Bewertung suchen und direkt buchen.',
     km: 'km',
     open: 'Geöffnet',
     noClinics: 'Keine passenden Kliniken.',
@@ -539,21 +496,16 @@ const D = {
     myAppointments: 'Meine Termine',
     allBookings: 'Alle Ihre Termine an einem Ort',
     deletePatientAccount: 'Patientenkonto löschen',
-    deletePatientConfirm:
-      'Patientenkonto löschen? Ihre Anmeldedaten werden gelöscht. Kliniken können Termindaten aufbewahren, wenn dies gesetzlich erforderlich ist.',
+    deletePatientConfirm: 'Patientenkonto löschen? Ihre Anmeldedaten werden gelöscht. Kliniken können Termindaten aufbewahren, wenn dies gesetzlich erforderlich ist.',
     accountDeleted: 'Patientenkonto gelöscht.',
     subscription: 'Abonnement',
-    cancelScheduled:
-      'Kündigung zum Ende des Zeitraums geplant.',
+    cancelScheduled: 'Kündigung zum Ende des Zeitraums geplant.',
     monthAppointments: 'Diesen Monat',
     revenue: 'Bezahlter Umsatz (EGP)',
     performance: 'Leistung',
-    aiAssistant:
-      'KI-Assistent für den Klinikbetrieb',
-    aiAssistantHint:
-      'Nur operative Hilfe — keine medizinische Beratung.',
-    aiPlaceholder:
-      'Frage zu Terminen, Erinnerungen, Personal oder Klinikleistung…',
+    aiAssistant: 'KI-Assistent für den Klinikbetrieb',
+    aiAssistantHint: 'Nur operative Hilfe — keine medizinische Beratung.',
+    aiPlaceholder: 'Frage zu Terminen, Erinnerungen, Personal oder Klinikleistung…',
     askAI: 'KI fragen',
     completed: 'abgeschlossen',
     cancelled: 'storniert',
@@ -570,57 +522,31 @@ export function useI18n() {
   useEffect(() => {
     const sync = () => {
       const next = localStorage.getItem('lang') || 'ar';
-
-      setLangState(
-        SUPPORTED.includes(next)
-          ? next
-          : 'ar'
-      );
+      setLangState(SUPPORTED.includes(next) ? next : 'ar');
     };
-
-    window.addEventListener(
-      'ondoq-language',
-      sync
-    );
-
+    window.addEventListener('ondoq-language', sync);
     return () => {
-      window.removeEventListener(
-        'ondoq-language',
-        sync
-      );
+      window.removeEventListener('ondoq-language', sync);
     };
   }, []);
 
   useEffect(() => {
     document.documentElement.lang = lang;
-    document.documentElement.dir =
-      lang === 'ar' ? 'rtl' : 'ltr';
+    document.documentElement.dir = lang === 'ar' ? 'rtl' : 'ltr';
   }, [lang]);
 
   const setLang = (next) => {
     if (!SUPPORTED.includes(next)) {
       return;
     }
-
     localStorage.setItem('lang', next);
-    localStorage.setItem(
-      'ondoq-language-mode',
-      'manual'
-    );
-
+    localStorage.setItem('ondoq-language-mode', 'manual');
     setLangState(next);
-
-    window.dispatchEvent(
-      new Event('ondoq-language')
-    );
+    window.dispatchEvent(new Event('ondoq-language'));
   };
 
   const t = (key) => {
-    return (
-      D[lang]?.[key] ??
-      D.en?.[key] ??
-      key
-    );
+    return D[lang]?.[key] ?? D.en?.[key] ?? key;
   };
 
   return {
@@ -630,24 +556,16 @@ export function useI18n() {
   };
 }
 
-export function LanguageSelect({
-  lang,
-  setLang,
-}) {
+export function LanguageSelect({ lang, setLang }) {
   return (
     <select
       className="language-select"
       value={lang}
-      onChange={(event) =>
-        setLang(event.target.value)
-      }
+      onChange={(event) => setLang(event.target.value)}
       aria-label="Language"
     >
       {LANGS.map(([code, label]) => (
-        <option
-          key={code}
-          value={code}
-        >
+        <option key={code} value={code}>
           {label}
         </option>
       ))}
